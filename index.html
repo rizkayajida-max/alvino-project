@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tasyakuran Khitanan - Alvino Putra Dinata</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --emerald-gradient: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+            --gold-gradient: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Cover Screen */
+        #cover {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(circle at center, #064e3b 0%, #022c22 100%);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        #cover.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .cover-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 24px;
+            padding: 40px 25px;
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        .bismillah {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: #34d399;
+            margin-bottom: 15px;
+        }
+
+        .cover-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .cover-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #f3f4f6;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(16, 185, 129, 0.4);
+        }
+
+        .guest-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px dashed rgba(52, 211, 153, 0.4);
+        }
+
+        .guest-box p {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 5px;
+        }
+
+        .guest-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #34d399;
+        }
+
+        .btn-open {
+            background: var(--emerald-gradient);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.5);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .btn-open:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -5px rgba(16, 185, 129, 0.7);
+        }
+
+        /* Main Invitation Wrapper */
+        .main-container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: #0b1329;
+            min-height: 100vh;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            position: relative;
+        }
+
+        section {
+            padding: 60px 25px;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, #064e3b, #0b1329);
+            padding-top: 80px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        .ornament-top {
+            font-size: 2rem;
+            color: #34d399;
+            margin-bottom: 15px;
+        }
+
+        .hero h3 {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(16, 185, 129, 0.5);
+        }
+
+        .hero-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        /* Profile Section */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            border-radius: 20px;
+            padding: 30px 20px;
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .photo-frame {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 5px;
+            background: var(--emerald-gradient);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #1e293b;
+        }
+
+        .child-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #34d399;
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .parents-info {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        .parents-info strong {
+            color: #f1f5f9;
+        }
+
+        /* Event Details */
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .event-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(6, 78, 59, 0.4));
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 20px;
+            padding: 30px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .event-card i {
+            font-size: 2.5rem;
+            color: #34d399;
+            margin-bottom: 15px;
+        }
+
+        .event-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .event-date-time {
+            font-size: 1rem;
+            color: #34d399;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .event-location {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-maps {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid #34d399;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-maps:hover {
+            background: #34d399;
+            color: #0f172a;
+        }
+
+        /* Countdown */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            min-width: 70px;
+        }
+
+        .countdown-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #34d399;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        /* RSVP & Wishes Form */
+        .wishes-section {
+            background: #080e1a;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #34d399;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--emerald-gradient);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+
+        .wishes-list {
+            margin-top: 30px;
+            max-height: 350px;
+            overflow-y: auto;
+            text-align: left;
+            padding-right: 5px;
+        }
+
+        .wish-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .wish-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .wish-author {
+            font-weight: 600;
+            color: #34d399;
+            font-size: 0.95rem;
+        }
+
+        .wish-badge {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 20px;
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+        }
+
+        .wish-text {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        /* Closing */
+        .closing {
+            background: linear-gradient(to top, #064e3b, #0b1329);
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+        }
+
+        .closing p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .footer {
+            font-size: 0.8rem;
+            color: #64748b;
+            padding: 20px;
+            background: #060913;
+            text-align: center;
+        }
+
+        /* Music Floating Button */
+        .music-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            background: var(--emerald-gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 998;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            animation: spin 4s linear infinite paused;
+        }
+
+        .music-btn.playing {
+            animation-play-state: running;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Audio (Islamic Sholawat Instrumental) -->
+    <audio id="bg-audio" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=ramadan-background-music-112341.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Cover Screen -->
+    <div id="cover">
+        <div class="cover-card" data-aos="zoom-in" data-aos-duration="800">
+            <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+            <div class="cover-title">Undangan Tasyakuran Khitanan</div>
+            <div class="cover-name">Alvino Putra Dinata</div>
+            
+            <div class="guest-box">
+                <p>Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <div class="guest-name" id="guest-name-display">Tamu Undangan</div>
+            </div>
+
+            <button class="btn-open" onclick="openInvitation()">
+                <i class="fa-solid fa-envelope-open"></i> Buka Undangan
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="ornament-top">☪</div>
+            <h3>Tasyakuran Khitanan</h3>
+            <h1>Alvino Putra Dinata</h1>
+            <p class="hero-desc">"Semoga Allah SWT menjadikan anak kami anak yang sholeh, berbakti kepada orang tua, serta berguna bagi agama dan bangsa."</p>
+            
+            <div class="profile-card" data-aos="fade-up">
+                <div class="photo-frame">
+                    <img src="https://images.unsplash.com/photo-1543332164-6e82f355badc?auto=format&fit=crop&q=80&w=400" alt="Alvino Putra Dinata">
+                </div>
+                <h2 class="child-name">Alvino Putra Dinata</h2>
+                <div class="parents-info">
+                    Putra Kedua dari Pasangan<br>
+                    <strong>Bapak Iskandar Dinata & Ibu Suhartiyem</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Details Section -->
+        <section>
+            <h2 class="section-title" data-aos="fade-up">Waktu & Tempat</h2>
+            <p class="section-subtitle" data-aos="fade-up">Insya Allah acara tasyakuran akan diselenggarakan pada:</p>
+
+            <div class="event-card" data-aos="zoom-in">
+                <i class="fa-solid fa-calendar-days"></i>
+                <div class="event-title">Acara Tasyakuran Khitanan</div>
+                <div class="event-date-time">Minggu, 20 Desember 2026</div>
+                <div class="event-location">
+                    <i class="fa-solid fa-location-dot" style="color: #34d399; margin-right: 5px;"></i>
+                    Perumahan Griya Lebak Wangi 2 Blok G. 5 No. 4 Rt 04 Rw 09 kelurahan Lebak wangi kecamatan sepatan kabupaten Tangerang
+                </div>
+                <a href="https://maps.google.com/?q=Perumahan+Griya+Lebak+Wangi+2+Sepatan+Tangerang" target="_blank" class="btn-maps">
+                    <i class="fa-solid fa-map-location-dot"></i> Buka Google Maps
+                </a>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div style="margin-top: 40px;" data-aos="fade-up">
+                <h3 style="font-size: 1.1rem; color: #f1f5f9; margin-bottom: 15px;">Menuju Hari Acara</h3>
+                <div class="countdown-container">
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="days">00</div>
+                        <div class="countdown-label">Hari</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="hours">00</div>
+                        <div class="countdown-label">Jam</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Menit</div>
+                    </div>
+                    <div class="countdown-box">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Detik</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP & Wishes Section -->
+        <section class="wishes-section">
+            <h2 class="section-title" data-aos="fade-up">Ucapan & Doa</h2>
+            <p class="section-subtitle" data-aos="fade-up">Berikan ucapan & doa restu untuk Alvino</p>
+
+            <form id="wish-form" data-aos="fade-up">
+                <div class="form-group">
+                    <label>Nama Anda</label>
+                    <input type="text" id="sender-name" class="form-control" placeholder="Tulis nama anda..." required>
+                </div>
+                <div class="form-group">
+                    <label>Konfirmasi Kehadiran (RSVP)</label>
+                    <select id="sender-attendance" class="form-control">
+                        <option value="Hadir">Hadir, Insya Allah</option>
+                        <option value="Berhalangan">Maaf, Berhalangan Hadir</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Ucapan & Doa</label>
+                    <textarea id="sender-message" class="form-control" rows="4" placeholder="Tulis ucapan dan doa..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Kirim Ucapan</button>
+            </form>
+
+            <div class="wishes-list" id="wishes-container">
+                <div class="wish-item">
+                    <div class="wish-header">
+                        <span class="wish-author">Ahmad Fauzi</span>
+                        <span class="wish-badge">Hadir</span>
+                    </div>
+                    <p class="wish-text">Barakallah, semoga Alvino lekas sehat kembali, jadi anak yang sholeh, pintar, dan membanggakan orang tua!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing Section -->
+        <section class="closing">
+            <div class="ornament-top">☪</div>
+            <h2 class="section-title" style="margin-bottom: 20px;">Terima Kasih</h2>
+            <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada putra kami.</p>
+            <div style="font-family: 'Cinzel', serif; font-size: 1.1rem; color: #34d399; font-weight: 700;">
+                Keluarga Besar Bpk. Iskandar Dinata & Ibu Suhartiyem
+            </div>
+        </section>
+
+        <div class="footer">
+            &copy; 2026 Alvino Putra Dinata. All Rights Reserved.
+        </div>
+    </div>
+
+    <!-- Floating Music Button -->
+    <div class="music-btn" id="music-toggle" onclick="toggleMusic()">
+        <i class="fa-solid fa-music"></i>
+    </div>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Parse Guest Name from URL parameter (?to=NamaTamu)
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestParam = urlParams.get('to');
+        if (guestParam) {
+            document.getElementById('guest-name-display').innerText = decodeURIComponent(guestParam);
+        }
+
+        // Music Control
+        const audio = document.getElementById('bg-audio');
+        const musicBtn = document.getElementById('music-toggle');
+        let isPlaying = false;
+
+        function openInvitation() {
+            const cover = document.getElementById('cover');
+            cover.classList.add('hidden');
+            audio.play().then(() => {
+                isPlaying = true;
+                musicBtn.classList.add('playing');
+            }).catch(e => {
+                console.log("Audio autoplay prevented:", e);
+            });
+        }
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                musicBtn.classList.remove('playing');
+                isPlaying = false;
+            } else {
+                audio.play();
+                musicBtn.classList.add('playing');
+                isPlaying = true;
+            }
+        }
+
+        // Countdown Timer to 20 December 2026 08:00:00
+        const eventDate = new Date("December 20, 2026 08:00:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("days").innerText = "0";
+                document.getElementById("hours").innerText = "0";
+                document.getElementById("minutes").innerText = "0";
+                document.getElementById("seconds").innerText = "0";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }, 1000);
+
+        // Handle RSVP Form Submission
+        document.getElementById('wish-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('sender-name').value;
+            const attendance = document.getElementById('sender-attendance').value;
+            const message = document.getElementById('sender-message').value;
+
+            const container = document.getElementById('wishes-container');
+            const newWish = document.createElement('div');
+            newWish.className = 'wish-item';
+            newWish.innerHTML = `
+                <div class="wish-header">
+                    <span class="wish-author">${escapeHtml(name)}</span>
+                    <span class="wish-badge">${escapeHtml(attendance)}</span>
+                </div>
+                <p class="wish-text">${escapeHtml(message)}</p>
+            `;
+            container.prepend(newWish);
+
+            document.getElementById('sender-name').value = '';
+            document.getElementById('sender-message').value = '';
+            alert('Terima kasih! Ucapan dan doa Anda telah dikirim.');
+        });
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+    </script>
+</body>
+</html>
